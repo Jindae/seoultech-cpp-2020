@@ -1,2 +1,1 @@
-# seoultech-cpp-2020
-SeoulTech 2020 Introduction to Programming (2) course.
+# 2020년도 2학기 프로그래밍 입문(2) 강의
