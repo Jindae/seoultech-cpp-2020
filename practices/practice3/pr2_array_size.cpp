@@ -30,6 +30,7 @@ int main() {
     int arr[] = { 1, 3, 2 };
     len = sizeof(arr) / sizeof(int);   //배열크기 구하기
     cout << "[" << arr[0] << ", " << arr[1] << ", " << arr[2] << "]\n";
+    cout << "size of arr: " << len << endl;
 
     return 0;
 }

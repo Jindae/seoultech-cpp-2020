@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 
-    //고정 배열과 동적 배열 성능비교
+    //고정 배열과 동적 할당 배열 성능비교
     int size = 1000;
     int fixed_arr[1000] = {};
     int* dynamic_arr = new int[size];  //int*에 주의
