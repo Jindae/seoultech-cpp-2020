@@ -34,6 +34,7 @@ int main() {
     cout << "a ^ b = " << std::bitset<8>(c) << endl << endl;
 
     //Shift Operators.
+    c = a << 1;
     cout << "     a = " << std::bitset<8>(a) << endl;
     cout << "a << 1 = " << std::bitset<8>(c) << endl;
     c = a >> 2;
