@@ -20,12 +20,11 @@ int main() {
     }
 
     cout << "Using do-while loop" << endl;
-    string input2;
     do{
         cout << "Input your string again: ";
-        getline(cin, input2);
-        cout << "your input is " << input2 << endl;
-    }while(!input2.empty());
+        getline(cin, input);
+        cout << "your input is " << input << endl;
+    } while(!input.empty());
 
     return 0;
 }
