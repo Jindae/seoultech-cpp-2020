@@ -5,14 +5,13 @@ using namespace std;
 int main() {
 
     //고정 배열과 동적 할당 배열 성능비교
-    int size = 1000;
-    int fixed_arr[1000] = {};
-    int* dynamic_arr = new int[size];  //int*에 주의
+    int size = 1000;    
 
     //write and read 1,000,000 times.
     int iter = 1000000;
     clock_t s_time = clock();
     for(int n=0; n<iter; n++) {
+        int fixed_arr[1000] = {};
         for(int i=0; i<size; i++) {
             fixed_arr[i] = fixed_arr[i] + 1;
         }
@@ -22,6 +21,7 @@ int main() {
 
     s_time = clock();
     for(int n=0; n<iter; n++) {
+        int* dynamic_arr = new int[size];  //int*에 주의
         for(int i=0; i<size; i++) {
             dynamic_arr[i] = dynamic_arr[i] + 1;
         }
