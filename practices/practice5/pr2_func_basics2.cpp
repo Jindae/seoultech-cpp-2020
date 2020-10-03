@@ -4,9 +4,7 @@ using namespace std;
 
 void read_data(string* products, int prices[][12], int size);
 void compute_avg_price(int prices[][12], double* avg_prices, int size);
-
 void sort(string*, double*, int);
-
 void print_products(string* products, double* avg_prices);
 
 int main() {

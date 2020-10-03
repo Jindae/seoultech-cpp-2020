@@ -1,5 +1,4 @@
 #include<iostream>
-#include<random>
 using namespace std;
 
 void print(int x, int y = 5, int z = 10);
