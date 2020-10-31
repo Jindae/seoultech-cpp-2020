@@ -1,3 +1,9 @@
 .DS_Store
 .vscode
 *.json
+*.exe
+*.dSYM
+answers
+test_all.cpp
+examples
+exams
