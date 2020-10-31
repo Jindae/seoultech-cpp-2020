@@ -4,7 +4,7 @@
 
 class DeliveryService {
     private:
-        const double UNIT_PRICE = 100.0;
+        static constexpr double UNIT_PRICE = 100.0;
         double freeWeight;
         double extraWeight;
     public:
