@@ -1,6 +1,6 @@
 #include<iostream>
 #include<vector>
-#include "answers/OnlineStore.hh"
+#include "classes/OnlineStore.hh"
 
 bool test1();
 bool test2();
