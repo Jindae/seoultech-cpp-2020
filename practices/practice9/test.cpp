@@ -1,6 +1,10 @@
 #include<iostream>
 #include<vector>
-#include "answers/OnlineStore.hh"
+#include<cmath>
+#include "classes/OnlineStore.hh"
+
+const double EPS = 0.00001;
+bool equals(double, double);
 
 bool test1();
 bool test2();
@@ -15,6 +19,11 @@ int main() {
     }
     std::cout << passed << "/" << tests.size() << " tests passed. " << std::endl;
     return passed == tests.size() ? 0 : 1;
+}
+
+bool equals(double x, double y) {
+    double delta = std::abs(x-y);
+    return delta <= EPS;
 }
 
 bool test1() {
@@ -46,9 +55,9 @@ bool test2() {
     result &= price == 1000;
     result &= store.getNumOfProducts() == 4;
     price = store.purchase(1, 3.0);
-    result &= price == (2000 + 3.0*100.0*3.0);
+    result &= equals(price, (2000 + 3.0*100.0*3.0));
     price = store.purchase(1, 1.0);
-    result &= price == -1.0;
+    result &= equals(price, -1.0);
 
     return result;
 }
@@ -60,9 +69,9 @@ bool test3() {
     double dist = 10.0;
     const double UNIT_PRICE = 100.0;
     result &= !(ds.deliveryPrice(weight, dist));
-    weight=3.0;   
-    result &= ds.deliveryPrice(weight, dist) == (UNIT_PRICE * weight * dist);
+    weight=3.0;    
+    result &= equals(ds.deliveryPrice(weight, dist), (UNIT_PRICE * weight * dist));
     weight=7.0;
-    result &= ds.deliveryPrice(weight, dist) == (UNIT_PRICE * weight * dist * 0.2);
+    result &= equals(ds.deliveryPrice(weight, dist), (UNIT_PRICE * weight * dist * 1.2));
     return result;
 }
