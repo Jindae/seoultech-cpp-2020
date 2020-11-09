@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<cmath>
+#include<functional>
 #include "classes/Student.hh"
 
 const double EPS = 0.00001;
