@@ -18,7 +18,13 @@ int main() {
         { test1, test2, test3, test4 };
     for(int i=0; i<tests.size(); i++) {
         std::function<bool()> test = tests[i];
-        if(test())
+        bool result = false;
+        try {
+            result = test();
+        } catch (...) {
+            result = false;
+        }
+        if(result)
             passed++;
         else
             std::cout << "test" << i+1 << " failed." << std::endl;

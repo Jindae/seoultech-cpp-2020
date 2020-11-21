@@ -14,9 +14,18 @@ bool test3();
 int main() {
     int passed = 0;
     std::vector<std::function<bool()>> tests = { test1, test2, test3 };
-    for(std::function<bool()> test : tests) {
-        if(test())
+    for(int i=0; i<tests.size(); i++) {
+        std::function<bool()> test = tests[i];
+        bool result = false;
+        try {
+            result = test();
+        } catch (...) {
+            result = false;
+        }
+        if(result)
             passed++;
+        else
+            std::cout << "test" << i+1 << " failed." << std::endl;
     }
     std::cout << passed << "/" << tests.size() << " tests passed. " << std::endl;
     return passed == tests.size() ? 0 : 1;
